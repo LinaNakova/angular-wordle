@@ -1,6 +1,7 @@
-import {Component, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
+import {Component, OnInit, QueryList, ViewChildren} from '@angular/core';
 import {CommunicatorService} from "./communicator.service";
 import {WordComponent} from "./word/word.component";
+import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
 
 
 @Component({
@@ -15,10 +16,13 @@ export class AppComponent implements OnInit {
   guessedWord = "";
   numberOfGuesses : number = 0;
   hidden = true;
+  // guessed = false;
+  again=false;
+
 
   @ViewChildren(WordComponent) wordComp : QueryList<any> | undefined;
 
-  constructor(private communicatorService : CommunicatorService) {
+  constructor(private communicatorService : CommunicatorService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.todaysWord = communicatorService.getTodaysWord();
   }
   ngOnInit() {
@@ -28,7 +32,9 @@ export class AppComponent implements OnInit {
   {
     if (this.numberOfGuesses === 6)
     {
-      alert("TRY AGAIN TOMORROW");
+      // alert("TRY AGAIN TOMORROW");
+      this.again=true;
+      this.guessedWord = "click the play again"
     }else
     {
       console.log("inside checkWord" + "word is " + this.guessedWord);
@@ -37,7 +43,9 @@ export class AppComponent implements OnInit {
         this.wordComp?.get(this.numberOfGuesses).showLetters();
         if (this.guessedWord === this.todaysWord) {
           //  alert here and style change
-          alert("CORRECT");
+          // alert("CORRECT");
+          this.again = true;
+          // this.guessed = true;
         }
         this.numberOfGuesses++;
         this.guessedWord = "";
@@ -52,6 +60,12 @@ export class AppComponent implements OnInit {
   close() : void
   {
     this.hidden = true;
+  }
+  reloadPage():void
+  {
+    this.again=false;
+    // this.router.navigate([this.router.url]);
+    window.location.reload();
   }
 
 }

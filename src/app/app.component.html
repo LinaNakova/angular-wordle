@@ -7,6 +7,7 @@
       <span>L</span>
       <span>E</span>
   </div>
+  <button type="button" (click)="reloadPage()" [ngClass]="again===false ? 'hide' : 'show'" id="playAgain">Play Again</button>
   <div class="body">
     <div class="game">
       <app-word *ngFor="let w of words" [guess]="guessedWord"></app-word>
