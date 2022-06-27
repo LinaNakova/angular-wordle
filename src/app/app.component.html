@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="header">
+      <span>W</span>
+      <span>O</span>
+      <span>R</span>
+      <span>D</span>
+      <span>L</span>
+      <span>E</span>
+  </div>
+  <div class="body">
+    <div class="game">
+      <app-word *ngFor="let w of words" [guess]="guessedWord"></app-word>
+    </div>
+    <div class="input">
+<!--      input/ketboard here-->
+      <input type="text" placeholder="Enter guess here..." [(ngModel)]="guessedWord" id="guess">
+    </div>
+    <button type="button" class="btn btn-primary" (click)="checkWord()">Check</button>
+<!--    <div>{{guessedWord}}</div>-->
+  </div>
+  <div class="footer">
+    <button type="button" (click)="about()">Rules</button>
+<!--    pop up here-->
+    <div [ngClass]="hidden === true ? 'hide' : 'show'"><p>The rules are very simple: You need to guess
+      the hidden word (5 letters) in 6 tries. To get started,
+      just type any word in the input. If the letter is guessed
+      correctly and is in the correct place, it will be highlighted in green,
+      if the letter is in the word, but in the wrong place - in yellow, and
+      if the letter is not in the word, it will remain transparent. Can you guess
+      the hidden word in 6 tries?</p>
+      <button type="button" (click)="close()">Close</button>
+    </div>
+
+    <span id="todaysWord">{{todaysWord}}</span>
+  </div>
+</div>

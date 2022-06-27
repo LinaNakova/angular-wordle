@@ -1,0 +1,113 @@
+.container
+{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  font-family: Calibri;
+}
+.footer{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  font-family: Calibri;
+}
+p{
+  font-family: Calibri;
+  color: #787c7f;
+  font-weight: bold;
+}
+h1
+{
+  color: #787c7f;
+  font-weight: bold;
+}
+.body
+{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  font-family: Calibri;
+}
+#todaysWord
+{
+  display: none;
+}
+button
+{
+  background-color: #787c7f;
+  border-color: transparent;
+  margin: 10px;
+  /*display: inline;*/
+  font-family: Calibri;
+  font-size: large;
+  font-weight: bolder;
+  color: white;
+  width: 100px;
+  height: 50px;
+  font-size: medium;
+  border-radius: 10px;
+}
+input
+{
+  border-color: #606365;
+  background-color: #787c7f;
+  font-family: Calibri;
+  font-size: xx-large;
+  font-weight: bolder;
+  color: white;
+  border-radius: 10px;
+  height: 60px;
+  width: auto;
+}
+::placeholder
+{
+  font-family: Calibri;
+  font-size: xx-large;
+  font-weight: bolder;
+  color: white;
+}
+.hide
+{
+  display: none;
+}
+.show
+{
+  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  font-family: Calibri;
+}
+span
+{
+  display: inline-block;
+  margin : 10px;
+  padding : 5px;
+  border-color: #3c7539;
+  border-style: solid;
+  border-width: medium;
+  border-radius: 5px;
+  font-family: Calibri;
+  font-weight: bolder;
+  color: white;
+  font-size: xx-large;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #6ca965;
+}
+.footer div
+{
+  margin-left: 300px;
+  margin-right: 300px;
+  text-align: justify;
+}
+button:hover
+{
+  background-color: #616267;
+}

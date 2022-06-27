@@ -1,0 +1,31 @@
+.letter
+{
+  margin : 10px;
+  padding : 10px;
+  border-color: gray;
+  border-style: solid;
+  border-width: medium;
+  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-family: Calibri;
+  color: gray;
+  font-weight: bolder;
+  font-size: xx-large;
+}
+.correct
+{
+  background-color: #6ca965;
+  color: white;
+}
+.almost
+{
+  background-color: #c8b653;
+  color: white;
+}
+.nope
+{
+  background-color: white;
+}
