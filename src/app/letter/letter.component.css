@@ -15,15 +15,46 @@
   font-weight: bolder;
   font-size: xx-large;
 }
+@keyframes appearCorrect {
+  from{
+    background-color: white;
+    border-color: #787c7f;
+    color: #787c7f;
+  }
+  to{
+    background-color: #6ca965;
+    border-color: #3c7539;
+    color: white;
+  }
+}
 .correct
 {
   background-color: #6ca965;
+  border-color: #3c7539;
   color: white;
+  animation-name: appearCorrect;
+  animation-duration: 2s;
+
+}
+@keyframes appearAlmost {
+  from{
+    background-color: white;
+    border-color: #787c7f;
+    color: #787c7f;
+  }
+  to{
+    background-color: #c8b653;
+    border-color: #a6973d;
+    color: white;
+  }
 }
 .almost
 {
   background-color: #c8b653;
+  border-color: #a6973d;
   color: white;
+  animation-name: appearAlmost;
+  animation-duration: 2s;
 }
 .nope
 {
