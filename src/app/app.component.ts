@@ -30,27 +30,27 @@ export class AppComponent implements OnInit {
   }
   checkWord()
   {
-    if (this.numberOfGuesses === 6)
-    {
-      // alert("TRY AGAIN TOMORROW");
-      this.again=true;
-      this.guessedWord = "click the play again"
-    }else
-    {
-      console.log("inside checkWord" + "word is " + this.guessedWord);
-      if (this.guessedWord?.length != 5 || this.numberOfGuesses < 6 ) {
+    console.log(this.numberOfGuesses  + " " + this.guessedWord)
+      // console.log("inside checkWord" + "word is " + this.guessedWord);
+      if (this.guessedWord?.length === 5 && this.numberOfGuesses < 6 ) {
         this.communicatorService.setGuessedWord(this.guessedWord);
         this.wordComp?.get(this.numberOfGuesses).showLetters();
         if (this.guessedWord === this.todaysWord) {
           //  alert here and style change
           // alert("CORRECT");
           this.again = true;
+          this.numberOfGuesses=6;
           // this.guessed = true;
         }
         this.numberOfGuesses++;
+        if (this.numberOfGuesses === 6)
+        {
+          // alert("TRY AGAIN TOMORROW");
+          this.again=true;
+          this.guessedWord = "click the play again"
+        }
         this.guessedWord = "";
       }
-    }
 
   }
   about() : void
